@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-app="todoList">
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My AngularJS App</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/cover.css" rel="stylesheet">
+</head>
+
+ <body ng-controller = "missionListCtrl">
+  <h1 class ="head">Angular todo list</h1>
+       
+       <form class="form-inline" role="form" >
+        <div class="form-group col-md-12">
+         <input type="text" ng-model="text" class="form-control" placeholder = "Enter mission"></input>
+         <input type="time" ng-model="time" class="form-control" min = "00:00" max = "24:00"></input>
+         <button name = "mission adder" ng-click = "addMission()" class="btn btn-default">add mission</button>
+        </div>
+       </form>
+      
+
+        
+         <ul class = "list-group col-md-4 col-md-offset-4 list">
+          <li ng-repeat = "mission in missions | filter: query | orderBy : orderProp track by $index" class = "list-group-item list-item" ng-class = "{done:mission.done}" >
+          <p class="list-text">
+          <input type="checkbox" ng-model = "mission.done"></input></a>
+          <tt class = "text">{{mission.name}}</tt>
+          <tt class = "time">Time {{mission.time | date: "HH:mm"}}</tt> 
+          <a class="delet" href="" ng-click = "delete($index)"><img src = "img/close-icon.png" class="deletButton" /></a></p>
+          </li>
+         </ul>
+        </div>
+     
+        
+
+      
+      
+
+      
+
+     <form class="form-inline" role="form">
+      <div class="form-group col-md-12">
+       <input type="text" ng-model="query" class="form-control" placeholder="search mission"></input>
+       <select ng-model = "orderProp" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <option value = "time">closest</option>
+        <option value =  "name">alphabetic</option>
+       </select>
+      </div>
+      </form>
+     
+
+
+
+    
+      <div class = "col-md-8 footer">
+       <p>there is <b>{{missions.length}}</b> mission in the list</p> 
+      <div>
+
+
+ 
+ 
+ </body>
+</html>

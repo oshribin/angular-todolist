@@ -1,0 +1,60 @@
+body{
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 150px;
+}
+
+.head{
+  position: relative;
+  bottom: 20px;
+}
+
+.list{ 
+  margin-top:25px;
+  color: black;
+  text-align: left;
+
+}
+ .time{position: absolute;
+  left:500px;
+  top:15px;
+ }
+
+ .delet{position: absolute;
+  left:590px;
+  top:15px; 
+ }
+.list-item{
+  width: 650px;
+  height: 50px;
+
+}
+.footer{
+  position: relative;
+  bottom: -20px;
+  right: -310px;
+}
+.deletButton{
+  position: relative;
+  left:15px;
+  width: 25px;
+  height: 25px;
+}
+.doneButton{
+  position: relative;
+  bottom: 8px;
+  
+}
+
+
+.text{
+  position: relative;
+  left: 10px;
+  font-size: 20px;
+  bottom: 7px;
+}
+
+.done{
+  text-decoration: line-through;
+}
